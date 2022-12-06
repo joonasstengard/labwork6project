@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login page for Movie App!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="loginImage">
+  <ion-img width="759" height="101" src="/assets/img/movieapplogin.png" alt="Movie App Login"></ion-img>
+</div>
+
+  <p>Remember to <b>never</b> share your Movie App login details with <b>anyone!</b></p>
+  
+  <div [formGroup]="loginForm">
+    <ion-item lines="full">
+      <ion-label position="floating">Username here</ion-label>
+      <ion-input formControlName="userInput" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password here</ion-label>
+      <ion-input formControlName="passInput" type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button [disabled]="!loginForm.valid" onclick="location.href='/movies'" color="primary" expand="block">Sign In</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" expand="block" [routerLink]="['/welcome']">Back</ion-button>
+      </ion-col>
+    </ion-row>
+</div>
+
+</ion-content>
